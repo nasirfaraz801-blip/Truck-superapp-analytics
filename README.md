@@ -79,6 +79,6 @@ python scripts/03_build_excel.py
 `excel/Recharge_Weekly_KPI.xlsx` has two sheets: **Data** (weekly rows by bank and city) and **Dashboard** (weekly attempts, failures, failure %, successful value, week-on-week change and an alert flag, with Bank and City dropdown filters). It uses only standard formulas (SUMIFS, IF, IFERROR, INDEX/MATCH), so it works in Excel, Google Sheets and Zoho Sheet, and updates automatically when new weeks are pasted into Data.
 
 ## Limitations
-- The data is simulated, so findings demonstrate the method, not real BlackBuck results.
-- Revenue uses assumed take rates.
-- The A/B test has one month of follow-up; novelty effects are possible.
+- The data is simulated, so the numbers show the analysis approach, not real company results.
+- Revenue is based on assumed take rates (toll 0.4%, fuel 0.6%, ₹300 per GPS device, ₹150 per load).
+- The A/B test has one month of follow-up, so a novelty effect is possible. A 5% holdout over 3 months would confirm the long-term lift.
