@@ -1,0 +1,9 @@
+metric,value
+Control retention,85.75
+Treatment retention,88.15
+Lift (pts),2.4
+95% CI low (pts),1.14
+95% CI high (pts),3.66
+p-value,0.00019
+Control failure rate (%),3.43
+Treatment failure rate (%),4.31
