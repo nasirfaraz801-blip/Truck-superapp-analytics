@@ -44,11 +44,12 @@ truck-superapp-analytics/
 ## How to run
 ```bash
 pip install -r requirements.txt
-python scripts/01_generate_data.py     # ~2 min: builds all CSVs in data/ (incl. the 775K-row fastag_recharges.csv, too large for GitHub) and data/superapp.db
-python scripts/02_run_sql.py
-python scripts/run_notebook.py         # or open the notebook and Run All
-python scripts/03_build_excel.py
+python scripts/01_generate_data.py   # ~2 min: builds all CSVs and data/superapp.db
+python scripts/02_run_sql.py         # runs the 16 SQL queries, saves sql/query_results.md
+jupyter notebook                     # open notebooks/truck_superapp_product_analytics.ipynb → Run All
+python scripts/03_build_excel.py     # builds excel/Recharge_Weekly_KPI.xlsx
 ```
+> `data/fastag_recharges.csv` (775K rows) is not in the repo because it's too large for GitHub; step 2 recreates it.
 
 ## Key findings
 
