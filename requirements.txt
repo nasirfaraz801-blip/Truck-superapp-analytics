@@ -1,0 +1,10 @@
+pandas>=2.0
+numpy
+scipy
+matplotlib
+seaborn
+openpyxl
+jupyter
+nbformat
+nbclient
+tabulate

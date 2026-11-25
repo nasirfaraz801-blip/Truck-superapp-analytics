@@ -1,6 +1,6 @@
 # Truck Operator Super-App — Product Analytics
 
-End-to-end product analytics for a truck-operator super-app (FASTag tolling, fuel payments, GPS telematics and a freight-load marketplace, modelled on platforms like BlackBuck): **activation funnel, cohort retention, cross-sell value, a root-cause analysis of a payments incident, and an A/B test readout.**
+End-to-end product analytics for a truck-operator super-app (FASTag tolling, fuel payments, GPS telematics and a freight-load marketplace, modelled on Indian truck-operator platforms): **activation funnel, cohort retention, cross-sell value, a root-cause analysis of a payments incident, and an A/B test readout.**
 
 **Tools:** SQL (SQLite) · Python (pandas, SciPy, matplotlib, seaborn) · Excel (formula-driven KPI workbook) · Power BI
 
@@ -27,7 +27,7 @@ End-to-end product analytics for a truck-operator super-app (FASTag tolling, fue
 ## Project structure
 ```
 truck-superapp-analytics/
-├── data/                        CSVs (+ superapp.db built by script 01)
+├── data/                        CSVs (fastag_recharges.csv + superapp.db are rebuilt by script 01)
 ├── scripts/
 │   ├── 01_generate_data.py      simulated data generator → CSVs + SQLite
 │   ├── 02_run_sql.py            runs all SQL, saves results
@@ -40,14 +40,13 @@ truck-superapp-analytics/
 ├── notebooks/truck_superapp_product_analytics.ipynb
 ├── excel/Recharge_Weekly_KPI.xlsx
 ├── powerbi/                     dashboard data + POWER_BI_GUIDE.md
-├── images/                      charts
-└── INTERVIEW_PREP.md
+└── images/                      charts
 ```
 
 ## How to run
 ```bash
 pip install -r requirements.txt
-python scripts/01_generate_data.py     # ~2 min: builds data/ and data/superapp.db
+python scripts/01_generate_data.py     # ~2 min: builds all CSVs in data/ (incl. the 775K-row fastag_recharges.csv, too large for GitHub) and data/superapp.db
 python scripts/02_run_sql.py
 python scripts/run_notebook.py         # or open the notebook and Run All
 python scripts/03_build_excel.py
@@ -79,6 +78,6 @@ python scripts/03_build_excel.py
 `excel/Recharge_Weekly_KPI.xlsx` has two sheets: **Data** (weekly rows by bank and city) and **Dashboard** (weekly attempts, failures, failure %, successful value, week-on-week change and an alert flag, with Bank and City dropdown filters). It uses only standard formulas (SUMIFS, IF, IFERROR, INDEX/MATCH), so it works in Excel, Google Sheets and Zoho Sheet, and updates automatically when new weeks are pasted into Data.
 
 ## Limitations
-- The data is simulated, so the numbers show the analysis approach, not real company results.
+- The data is simulated, so the numbers show the analysis approach, not real company results. The same queries and methods run on production data unchanged.
 - Revenue is based on assumed take rates (toll 0.4%, fuel 0.6%, ₹300 per GPS device, ₹150 per load).
 - The A/B test has one month of follow-up, so a novelty effect is possible. A 5% holdout over 3 months would confirm the long-term lift.
