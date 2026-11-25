@@ -32,8 +32,6 @@ truck-superapp-analytics/
 │   ├── 01_generate_data.py      simulated data generator → CSVs + SQLite
 │   ├── 02_run_sql.py            runs all SQL, saves results
 │   ├── 03_build_excel.py        Excel KPI workbook
-│   ├── build_notebook.py        (re)generates the notebook
-│   └── run_notebook.py          executes the notebook
 ├── sql/
 │   ├── product_analysis.sql     16 queries (funnel, cohorts, RCA, A/B)
 │   └── query_results.md         output of every query
